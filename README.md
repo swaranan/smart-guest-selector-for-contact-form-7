@@ -1,4 +1,4 @@
-=== CF7 Guests Field ===
+# CF7 Guests Field
 Contributors: swaranan
 Tags: contact form 7, cf7, guests, booking, adults, children, child ages
 Requires at least: 5.8
@@ -10,7 +10,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Adds a smart Guests field for Contact Form 7 with Adults, Children, and optional Children Age selection.
 
-== Description ==
+## Description 
 
 CF7 Guests Field extends Contact Form 7 by adding an advanced Guests selector suitable for hotel bookings, tours, reservations, events, and travel forms.
 
@@ -24,7 +24,7 @@ Instead of a simple number field, users can:
 
 The plugin integrates directly into the Contact Form 7 form editor with its own tag generator button.
 
-= Features =
+## Features
 
 - Adds a custom Guests field type to Contact Form 7
 - Adults & Children selector UI
@@ -36,25 +36,25 @@ The plugin integrates directly into the Contact Form 7 form editor with its own 
 - Mail tags support
 - Easy shortcode/tag generator inside CF7 editor
 
-= Example Form Tag =
+### Example Form Tag
 
 [cf7_guests* guests min:1 max:10 child_ages]
 
-= Available Mail Tags =
+### Available Mail Tags 
 
 [guests]
 [guests_adults]
 [guests_children]
 [cf7-guests-summary]
 
-= Example Output =
+### Example Output
 
 Guests: 4
 Adults: 2
 Children: 2
 Child Ages: 5, 8
 
-== Installation ==
+## Installation 
 
 1. Upload the plugin files to the `/wp-content/plugins/cf7-guests-field` directory, or install the plugin through the WordPress plugins screen.
 2. Activate the plugin through the "Plugins" screen in WordPress.
@@ -63,7 +63,7 @@ Child Ages: 5, 8
 5. Click the new "Guests" button in the form editor toolbar.
 6. Configure your field options and insert the tag.
 
-== Frequently Asked Questions ==
+## Frequently Asked Questions 
 
 = Does this plugin require Contact Form 7? =
 
@@ -87,14 +87,14 @@ Example:
 
 [cf7_guests guests min:1 max:8]
 
-== Screenshots ==
+## Screenshots 
 
 1. Guests button inside Contact Form 7 editor
 2. Frontend guest selector
 3. Adults & Children dropdown UI
 4. Child age fields example
 
-== Changelog ==
+## Changelog 
 
 = 1.1.0 =
 * Added Contact Form 7 tag generator button
@@ -112,6 +112,6 @@ Example:
 = 1.1.0 =
 Includes Contact Form 7 editor integration and enhanced guest selector UI.
 
-== License ==
+## License 
 
 This plugin is licensed under the GPLv2 or later.
