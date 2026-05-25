@@ -32,13 +32,14 @@ The plugin integrates directly into the Contact Form 7 form editor with its own 
 - Configurable minimum and maximum guests
 - Required field support
 - Mobile-friendly UI
+- Optional first dropdown label using `first_as_label`
 - Validation for total guest count
 - Mail tags support
 - Easy shortcode/tag generator inside CF7 editor
 
 = Example Form Tag =
 
-[cf7_guests* guests min:1 max:10 child_ages]
+[cf7_guests* guests min:1 max:10 label:Total label:Guests first_as_label child_ages]
 
 = Available Mail Tags =
 
@@ -86,6 +87,14 @@ Yes. Use `min:` and `max:` options.
 Example:
 
 [cf7_guests guests min:1 max:8]
+
+= Can I show the label as the first dropdown option? =
+
+Yes. Add `first_as_label` and provide a `label:` value.
+
+Example:
+
+[cf7_guests participants min:0 max:20 default:0 label:Number label:of label:Participants first_as_label]
 
 == Screenshots ==
 

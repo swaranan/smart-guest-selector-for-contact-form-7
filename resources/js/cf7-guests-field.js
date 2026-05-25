@@ -10,16 +10,21 @@
     return Math.min(Math.max(value, min), max);
   }
 
-  function setSelectOptions(select, min, max, selectedValue) {
+  function setSelectOptions(select, min, max, selectedValue, placeholderText) {
     var html = '';
-    var selected = clamp(selectedValue, min, max);
+    var hasPlaceholder = typeof placeholderText === 'string' && placeholderText !== '';
+    var selected = selectedValue === '' ? '' : clamp(selectedValue, min, max);
+
+    if (hasPlaceholder) {
+      html += '<option value=""' + (selected === '' ? ' selected' : '') + '>' + placeholderText + '</option>';
+    }
 
     for (var i = min; i <= max; i++) {
       html += '<option value="' + i + '"' + (i === selected ? ' selected' : '') + '>' + i + '</option>';
     }
 
     select.innerHTML = html;
-    select.value = String(selected);
+    select.value = selected === '' ? '' : String(selected);
   }
 
   function buildAgeFields(wrapper, count) {
@@ -79,12 +84,16 @@
 
     var min = toInt(wrapper.getAttribute('data-min'), 0);
     var max = toInt(wrapper.getAttribute('data-max'), 20);
+    var firstAsLabel = wrapper.getAttribute('data-first-as-label') === '1';
+    var labelText = wrapper.getAttribute('data-label') || '';
 
     function syncFromTotal() {
-      var total = clamp(toInt(totalInput.value, 0), min, max);
-      setSelectOptions(totalInput, min, max, total);
+      var rawValue = totalInput.value;
+      var usePlaceholderSelection = firstAsLabel && rawValue === '';
+      var total = clamp(toInt(rawValue, 0), min, max);
+      setSelectOptions(totalInput, min, max, usePlaceholderSelection ? '' : total, firstAsLabel ? labelText : '');
 
-      if (total > 0) {
+      if (!usePlaceholderSelection && total > 0) {
         card.hidden = false;
         panel.hidden = false;
       } else {
